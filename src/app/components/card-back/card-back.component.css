@@ -1,0 +1,13 @@
+.placeholder-card__container {
+  width: 75%;
+}
+.placeholder-card__container .img__container {
+  background: url("/assets/images/bg-card-back.png");
+  width: 75%;
+  position: relative;
+  background-size: cover;
+}
+.placeholder-card__container span {
+  position: absolute;
+  top: 0;
+}/*# sourceMappingURL=placeholder-card.component.css.map */

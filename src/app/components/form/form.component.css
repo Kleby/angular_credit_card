@@ -1,0 +1,52 @@
+.form__container {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form__container .form__group {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form__container .form__group label {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.form__container .form__group input {
+  padding: 14px 12px;
+  border: 1px solid #dedddf;
+  border-radius: 8px;
+  min-width: 64px;
+}
+.form__container .form__group input::-moz-placeholder {
+  color: #dedddf;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+}
+.form__container .form__group input::placeholder {
+  color: #dedddf;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+}
+.form__container .form__card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 12px;
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+.form__container .form__card-content .group-date {
+  display: flex;
+  gap: 8px;
+}
+.form__container .form__card-content .group-date .card-number {
+  display: flex;
+  width: 64px;
+  text-align: center;
+}
+.form__container .form__card-content .card-cvc input {
+  width: 100%;
+}/*# sourceMappingURL=form.component.css.map */

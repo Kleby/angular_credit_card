@@ -1,0 +1,17 @@
+@import '/src/assets/sass/mixins/bg-card.sass'
+
+.card-back__container
+    @include bg-card-img($bg-img:'/assets/images/bg-card-back.png')
+    
+    .card-back__content
+        position: relative
+        width: 100%
+        height: 100%
+
+        .cvv
+            position: absolute
+            top: 43%
+            right: 20%
+            color: #fff
+            z-index: 1
+            font-size: 75%

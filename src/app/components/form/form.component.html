@@ -1,0 +1,37 @@
+<form
+    class="form__container"
+>
+    <div class="form__group">
+        <label for="cardName">Cardholder Name</label>
+        <input type="text" placeholder="e.g. Jane Appleseed"
+            id="cardName" 
+        />
+    </div>
+    <div class="form__group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" placeholder=" e.g. 1234 5678 9123 0000"
+            id="cardNumber"
+        />
+    </div>
+    <div class="form__card-content">
+        <div class="form__group">
+            <label for="cardDateMonth">Exp. Date (MM/YY)</label>
+           
+           <div class="group-date">
+               <input type="datetime" placeholder="MM"
+                   name="month" id="cardDateMonth" 
+                   class="card-number"
+               />
+               <input type="datetime" placeholder="YY"
+                   name="year" id="cardDateYear"
+                   class="card-number"
+               />
+           </div>
+        </div>
+        <div class="form__group card-cvc">
+            <label for="cvc" class="teste">cvc</label>
+            <input type="number" placeholder="e.g. 123" />
+        </div>
+    </div>
+    <button class="btn">Confirm</button>
+</form>

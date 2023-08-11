@@ -1,0 +1,19 @@
+.main__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+}
+.main__container .main__card {
+  background-size: cover;
+  background: url("/assets/images/bg-main-mobile.png");
+  height: 40%;
+  width: 100%;
+}
+.main__container .main__form {
+  width: 98%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=app.component.css.map */

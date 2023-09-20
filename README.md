@@ -2,7 +2,9 @@
 ## Cartão Interativo com detalhes no formulários e validações.
 
 <a href="https://angular-credit-card-phi.vercel.app/">
+  
 ![Design oferecido pelo o desafio](./src/assets/interactive-card-details-form-main/design/desktop-preview.jpg) 
+
 </a>
 
 <a href="https://angular-credit-card-phi.vercel.app/" > Clique aqui para visualizar minha aplicação do desafio ou clique na imagem </a>

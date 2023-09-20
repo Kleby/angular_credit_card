@@ -1,13 +1,13 @@
 # Desafio do Front-end Mentor
 ## Cartão Interativo com detalhes no formulários e validações.
 
-<a href="https://angular-credit-card-phi.vercel.app/">
+<a href="https://angular-credit-card-phi.vercel.app/" target="_blank">
   
 ![Design oferecido pelo o desafio](./src/assets/interactive-card-details-form-main/design/desktop-preview.jpg) 
 
 </a>
 
-<a href="https://angular-credit-card-phi.vercel.app/" > Clique aqui para visualizar minha aplicação do desafio ou clique na imagem </a>
+<a href="https://angular-credit-card-phi.vercel.app/" target="_blank"> Clique aqui para visualizar minha aplicação do desafio ou clique na imagem </a>
 
 ### Esse desafio foi feito usando o framework Angular com formulários reativos e validações.
 

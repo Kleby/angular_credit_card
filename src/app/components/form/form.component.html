@@ -1,37 +1,144 @@
 <form
-    class="form__container"
->
+    class="form__container" [formGroup]="cardForm" (ngSubmit)="onSubmit()">
     <div class="form__group">
         <label for="cardName">Cardholder Name</label>
-        <input type="text" placeholder="e.g. Jane Appleseed"
-            id="cardName" 
-        />
+        <input 
+            type="text" 
+            placeholder="e.g. Jane Appleseed"
+            id="cardName"
+            name="cardName" 
+            maxlength="26"
+            [ngClass]="{'error-field': errorForm('cardName')}"
+            formControlName="cardName"
+            class="input-field"
+            (input)="onCardName()" />
+        
+        <div *ngIf="errorForm('cardName')" class="danger">
+            <small *ngIf="errorField['cardName']?.errors?.['pattern']">Wrong
+                format, letters only</small>
+            <small *ngIf="errorField['cardName']?.errors?.['required']">Can't be
+                blank</small>
+        </div>
     </div>
     <div class="form__group">
         <label for="cardNumber">Card Number</label>
-        <input type="text" placeholder=" e.g. 1234 5678 9123 0000"
+        <input 
+            type="text" 
+            placeholder=" e.g. 1234 5678 9123 0000"
+            maxlength="19"
             id="cardNumber"
-        />
+            name="cardNumber"
+            [ngClass]="{'error-field': errorForm('cardNumber')}"
+            formControlName="cardNumber"
+            class="input-field"
+            [(ngModel)]="this.cardForm.value.cardNumber"
+            (input)="onCardNumber()" />
+        
+        <div *ngIf="errorForm('cardNumber')" class="danger">
+            <small
+                *ngIf="errorField['cardNumber']?.errors?.['pattern']"
+            >
+                Wrong format, numbers only
+            </small>
+            <small 
+                *ngIf="errorField['cardNumber']?.errors?.['required']"
+            >
+                Can't be blank
+            </small>
+        </div>
     </div>
     <div class="form__card-content">
-        <div class="form__group">
+        <div class="form__group exp-date">
             <label for="cardDateMonth">Exp. Date (MM/YY)</label>
-           
-           <div class="group-date">
-               <input type="datetime" placeholder="MM"
-                   name="month" id="cardDateMonth" 
-                   class="card-number"
-               />
-               <input type="datetime" placeholder="YY"
-                   name="year" id="cardDateYear"
-                   class="card-number"
-               />
-           </div>
+            <div class="group-date">
+                <input 
+                    type="text" 
+                    placeholder="MM"
+                    name="month" 
+                    id="cardDateMonth"
+                    class="card-number input-field"
+                    maxlength="2" inputmode="numeric"
+                    formControlName="cardMonth"
+                    (input)="onCardMonth($event.target)"
+                    [ngClass]="{'error-field': errorForm('cardMonth')}" />
+
+                <input 
+                    type="text" 
+                    inputmode="numeric"
+                    maxlength="2"
+                    placeholder="YY"
+                    name="year" 
+                    id="cardDateYear"
+                    class="card-number input-field"
+                    formControlName="cardYear"
+                    (input)="onCardYear($event.target)"
+                    [ngClass]="{'error-field': errorForm('cardYear')}" />
+            </div>
+            
+            <div *ngIf="errorForm('cardMonth') || errorForm('cardYear')" class="danger">
+                <small
+                    *ngIf="errorField['cardMonth']?.errors?.['max'] || errorField['cardMonth']?.errors?.['min']"
+                >
+                    Invalid month.
+                </small>
+
+                <small
+                    *ngIf="errorField['cardYear']?.errors?.['min']"
+                >
+                    Invalid Year.
+                </small>
+
+                <small
+                    *ngIf="errorField['cardMonth']?.errors?.['required'] || errorField['cardYear']?.errors?.['required']"
+                >
+                    Can't be blank.
+                </small>
+                
+                <small
+                    *ngIf="errorField['cardMonth']?.errors?.['pattern'] || errorField['cardYear']?.errors?.['pattern']"
+                >
+                    Numbers only
+                </small>
+            </div>
         </div>
+
         <div class="form__group card-cvc">
-            <label for="cvc" class="teste">cvc</label>
-            <input type="number" placeholder="e.g. 123" />
+            <label for="cvc">cvc</label>
+            <input 
+                type="text" 
+                placeholder="e.g. 123"
+                formControlName="cardCVC"
+                name="cardCVC"
+                id="cvc"
+                class="input-field" 
+                inputmode="numeric"
+                [class]="{'error-field': errorForm('cardCVC')}"
+                (input)="onCardCVC($event.target)"
+                maxlength="3" />
+
+            <div *ngIf="errorForm('cardCVC')" class="danger">
+                <small
+                    *ngIf="errorField['cardCVC']?.errors?.['required']"
+                >
+                    Can't be blank.
+                </small>
+                
+                <small
+                    *ngIf="errorField['cardCVC']?.errors?.['min']"
+                >
+                    Invalid CVC.
+                </small>
+                
+                <small *ngIf="errorField['cardCVC']?.errors?.['pattern']"
+                >
+                    Numbers only
+                </small>
+            </div>
         </div>
-    </div>
-    <button class="btn">Confirm</button>
+    </div>   
+    <app-button [btnValue]="'Confirm'" 
+        [isDisabled]="cardForm.invalid"
+        (onToggle)="getButtonToggle($event)"
+        [isConfirm]="isConfirm"
+    />
 </form>

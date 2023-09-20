@@ -1,0 +1,21 @@
+@media screen and (min-width: 769px) {
+  .main__container {
+    flex-direction: row;
+  }
+  .main__container .main__card {
+    height: 100vh;
+    width: 40%;
+    background-image: url("/assets/images/bg-main-desktop.png");
+  }
+  .main__container .main__card .card__content .card__card-back {
+    height: 17vw;
+    width: 30vw;
+    top: 40vh;
+    left: 11vw;
+    z-index: 1;
+    position: fixed;
+  }
+  .main__container .main__form {
+    margin: 0 auto;
+  }
+}/*# sourceMappingURL=app.component.responsive.css.map */

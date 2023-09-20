@@ -1,0 +1,7 @@
+@media screen and (min-width: 769px) {
+  .card-back__container .cvv {
+    top: 7vw;
+    left: 23vw;
+    font-size: 1.75vw;
+  }
+}/*# sourceMappingURL=card-back.component.responsive.css.map */

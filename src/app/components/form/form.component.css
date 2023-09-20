@@ -5,7 +5,7 @@
   align-items: center;
 }
 .form__container .form__group {
-  margin: 12px 0;
+  margin: 7px 0;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -14,18 +14,25 @@
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-.form__container .form__group input {
-  padding: 14px 12px;
+.form__container .form__group .error-field {
+  border-color: #f11 !important;
+  outline: none;
+}
+.form__container .form__group .input-field {
+  padding: 8px 12px;
   border: 1px solid #dedddf;
   border-radius: 8px;
   min-width: 64px;
+  outline: none;
+  font-size: 1.25rem;
+  font-family: "Space Grotesk", sans-serif;
 }
-.form__container .form__group input::-moz-placeholder {
+.form__container .form__group .input-field::-moz-placeholder {
   color: #dedddf;
   font-size: 18px;
   font-family: "Space Grotesk", sans-serif;
 }
-.form__container .form__group input::placeholder {
+.form__container .form__group .input-field::placeholder {
   color: #dedddf;
   font-size: 18px;
   font-family: "Space Grotesk", sans-serif;
@@ -33,10 +40,12 @@
 .form__container .form__card-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: end;
   gap: 12px;
   max-width: 100%;
   margin-bottom: 15px;
+}
+.form__container .form__card-content .exp-date {
+  width: 170px;
 }
 .form__container .form__card-content .group-date {
   display: flex;

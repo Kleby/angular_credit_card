@@ -1,0 +1,40 @@
+@import '/src/assets/sass/mixins/bg-card.sass'
+
+.card-front__container
+    @include bg-card-img('/assets/images/bg-card-front.png')
+    @include bg-width-height()
+    color: #dedddf
+    position: relative
+    display: flex  
+    flex-direction: column
+    align-items: center
+    gap: 16px
+    padding: 15px
+
+    .card-front__mark
+        display: flex
+        align-items: center
+        width: 100%
+
+        .mark__logo
+            width: 48px
+
+    .card-front__number
+        width: 100%
+        text-align: center
+        margin-top: 18px
+
+        h3
+            font-size: 1.15rem
+            letter-spacing: 2px
+            word-spacing: 1px
+
+    .card-front__infor
+        width: 100%
+        margin-bottom: 5px
+
+        .card-front__owner
+            display: flex
+            justify-content: space-between
+            align-items: center
+            font-size: .75rem

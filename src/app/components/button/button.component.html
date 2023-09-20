@@ -1,0 +1,9 @@
+<button 
+    class="btn" 
+    type="button" 
+    [disabled]="isDisabled" 
+    [ngClass]="{ 'enabled' : !isDisabled}" 
+    (click)="isToggleButton()"
+>
+    {{btnValue}}
+</button>

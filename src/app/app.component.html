@@ -1,14 +1,29 @@
 <main class="main__container">
     <div class="main__card">
-        <div class="card__card-back">
-            <app-card-back />
-        </div>
-        <div class="card__card-front">
-            <app-card /> 
+        <div class="card__content">
+            <div class="card__card-back">
+                <app-card-back [cvc]="cardCVC" />
+            </div>
+            <div class="card__card-front">
+                <app-card-front [cardName]="cardName" [cardNumber]="cardNumber" [cardMonth]="cardMonth"
+                    [cardYear]="cardYear" />
+            </div>
         </div>
     </div>
     <div class="main__form">
-        <app-form />
+        <app-form  *ngIf="!isConfirm"
+            (cardFormValues)="getCardFormValues($event)"
+            (cardValueName)="getCardName($event)" (cardValueNumber)="getCardNumber($event)"
+            (cardValueMonth)="getCardMonth($event)" (cardValueYear)="getCardYear($event)"
+            (cardValueCVC)="getCardCVC($event)" (onConfirm)="onToggleConfirm($event)" 
+            (onConfirm)="onToggleConfirm($event)"  
+            [isConfirm]="isConfirm"  
+        />
+        <div *ngIf="isConfirm">
+            <app-completed-card [ngStyle]="{'height': '100%'}"
+                (onConfirm)="onToggleConfirm($event)"
+                [isConfirm]="isConfirm"
+            />
+        </div>
     </div>
 </main>
-

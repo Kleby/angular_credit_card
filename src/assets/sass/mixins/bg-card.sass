@@ -1,11 +1,13 @@
-@mixin bg-card-img($bg-mw: 300px, $bg-mh: 165px, $bg-img)
+@mixin bg-card-img($bg-img)
     background-image: url($bg-img)
-    max-width: $bg-mw
-    max-height: $bg-mh
-    width: 100%
-    height: 100%
     background-size: contain
     background-repeat: no-repeat
 
+@mixin bg-width-height($bg-w: 275px, $bg-h:157px)
+    width: $bg-w
+    height: $bg-h
 
-    
+@mixin card-position($-top: 0, $-left: 0)
+    position: absolute
+    top: $-top
+    left: $-left

@@ -1,13 +1,18 @@
-<div>
-    <i>icon</i>
-    <h2>
-        Thank you!
-    </h2>
-        
-    <p>
-        We've added your card details
-    </p>
-    <button class="btn">
-        Continue
-    </button>
+<div class="completed-card__container">
+        <div class="completed-card__icon">
+            <img src="assets/images/icon-complete.svg" alt="Complete icon">
+        </div>
+        <div class="completed-card__content">
+            <h2 class="completed-card__title">
+                Thank you!
+            </h2>
+            
+            <p class="completed-card__description">
+                We've added your card details
+            </p>
+        </div>
+        <app-button [btnValue]="'Continue'" 
+            (onToggle)="getButtonToggle($event)"
+            [isConfirm]="isConfirm"
+        />
 </div>
